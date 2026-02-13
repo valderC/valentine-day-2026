@@ -1,0 +1,270 @@
+/* ===========================
+   CSS Variables
+   =========================== */
+:root {
+    --romantic-red: #e63946;
+    --soft-pink: #ffb3c6;
+    --light-pink: #ffc8dd;
+    --lavender: #cdb4db;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   Global Reset & Base Styles
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--lavender) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* ===========================
+   Container & Layout
+   =========================== */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px var(--shadow);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+}
+
+/* ===========================
+   Typography
+   =========================== */
+.heart-decoration {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+.main-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: var(--romantic-red);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 18px 45px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-hover);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, var(--romantic-red) 0%, #ff006e 100%);
+    color: var(--white);
+}
+
+.btn-yes:hover {
+    background: linear-gradient(135deg, #ff006e 0%, var(--romantic-red) 100%);
+}
+
+.btn-no {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    color: var(--white);
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+/* ===========================
+   Success Message
+   =========================== */
+.success-message {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.success-message.hidden {
+    display: none;
+}
+
+.success-heart {
+    font-size: 100px;
+    margin-bottom: 20px;
+    animation: heartbeat 1s ease-in-out infinite;
+}
+
+.success-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: var(--romantic-red);
+    margin-bottom: 20px;
+}
+
+.success-text {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.success-text strong {
+    color: var(--romantic-red);
+    font-weight: 600;
+}
+
+/* ===========================
+   Hearts Background Container
+   =========================== */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 30px;
+    opacity: 0.7;
+    animation: float-up 6s linear forwards;
+    pointer-events: none;
+}
+
+/* ===========================
+   Confetti Container
+   =========================== */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    animation: confetti-fall 3s linear forwards;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+    .content {
+        padding: 40px 30px;
+    }
+
+    .heart-decoration {
+        font-size: 60px;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+        padding: 15px 35px;
+    }
+
+    .success-heart {
+        font-size: 80px;
+    }
+
+    .success-title {
+        font-size: 2rem;
+    }
+
+    .success-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 30px 20px;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .buttons-container {
+        gap: 15px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 14px 30px;
+    }
+}
