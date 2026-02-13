@@ -85,6 +85,18 @@
     }
 }
 
+/* Fade In Up Animation (Gallery) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Bounce Animation */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {

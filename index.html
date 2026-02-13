@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
@@ -25,16 +25,22 @@
     <!-- Main content -->
     <main class="container">
         <div class="content">
+            <!-- Girlfriend photo -->
+            <div class="gf-wrapper">
+                <img src="assets/gf_1.jpeg" alt="Cynthia" class="gf-photo">
+                <p class="gf-caption">wow my girlfriend is SO HOT</p>
+            </div>
+
             <!-- Main heart decoration -->
             <div class="heart-decoration">❤️</div>
 
             <!-- Main question -->
-            <h1 class="main-title">Will You Be My Valentine?</h1>
+            <h1 class="main-title">Cynthia, Will You Be My Valentine?</h1>
 
             <!-- Romantic subtitle -->
             <p class="subtitle">
                 Every moment with you makes my heart skip a beat.<br>
-                Let's make this Valentine's Day special together.
+                So what do you say, Cynthia Elisa Hernandez? 💕
             </p>
 
             <!-- Buttons container -->
@@ -43,18 +49,33 @@
                 <button class="btn btn-no" id="noBtn">No</button>
             </div>
 
-            <!-- Hidden success message -->
-            <div class="success-message hidden" id="successMessage">
-                <div class="success-heart">💖</div>
-                <h2 class="success-title">You made my day! 💕</h2>
-                <p class="success-text">
-                    I'm the luckiest person in the world!<br>
-                    Can't wait to celebrate this special day with you.<br>
-                    <strong>Happy Valentine's Day, my love!</strong>
-                </p>
-            </div>
         </div>
     </main>
+
+    <!-- Gallery view (shown after Yes) -->
+    <div class="gallery-view hidden" id="galleryView">
+        <div class="gallery-header">
+            <div class="success-heart">💖</div>
+            <h2 class="success-title">You made my day! 💕</h2>
+            <p class="success-text">
+                I truly feel like the luckiest guy in the world, and I get so excited
+                for the lifetime of amazing memories we still have to share.<br>
+                Here's to 70 more Valentines together... at least 💕
+            </p>
+        </div>
+
+        <div class="photo-gallery" id="photoGallery">
+            <img src="assets/couple.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.1s">
+            <img src="assets/couple_2.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.2s">
+            <img src="assets/couple_3.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.3s">
+            <img src="assets/couple_4.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.4s">
+            <img src="assets/couple_5.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.5s">
+            <img src="assets/couple_6.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.6s">
+            <img src="assets/couple_7.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.7s">
+            <img src="assets/couple_9.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.8s">
+            <img src="assets/couple_10.jpeg" alt="Us together" class="gallery-photo" style="animation-delay: 0.9s">
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/hearts.js"></script>

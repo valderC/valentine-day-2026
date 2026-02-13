@@ -8,7 +8,8 @@
     const yesBtn = document.getElementById('yesBtn');
     const noBtn = document.getElementById('noBtn');
     const buttonsContainer = document.getElementById('buttonsContainer');
-    const successMessage = document.getElementById('successMessage');
+    const galleryView = document.getElementById('galleryView');
+    const mainContainer = document.querySelector('.container');
     const confettiContainer = document.getElementById('confetti-container');
 
     /**
@@ -57,26 +58,47 @@
      * Handles "Yes" button click
      */
     function handleYesClick() {
-        // Hide buttons
-        buttonsContainer.style.display = 'none';
+        // Hide the entire main card
+        mainContainer.style.display = 'none';
 
-        // Show success message
-        successMessage.classList.remove('hidden');
+        // Show gallery view
+        galleryView.classList.remove('hidden');
+
+        // Scroll to top so gallery header is visible
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
         // Trigger confetti
         createConfetti();
 
-        // Optional: Add multiple confetti bursts
+        // Multiple confetti bursts
         setTimeout(() => createConfetti(), 500);
         setTimeout(() => createConfetti(), 1000);
+    }
+
+    /**
+     * Shows "Muy Mal!" message in center of screen for 2 seconds
+     */
+    function showMuyMal() {
+        const overlay = document.createElement('div');
+        overlay.classList.add('muy-mal-overlay');
+        overlay.innerHTML = '<div class="muy-mal-text">Muy Mal! 😤</div>';
+        document.body.appendChild(overlay);
+
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.4s ease';
+            setTimeout(() => overlay.remove(), 400);
+        }, 1000);
     }
 
     /**
      * Handles "No" button hover/touch - makes it run away
      */
     function handleNoButtonEscape() {
-        const container = buttonsContainer.getBoundingClientRect();
         const button = noBtn.getBoundingClientRect();
+
+        // Show "Muy Mal!" message
+        showMuyMal();
 
         // Calculate available space
         const maxX = window.innerWidth - button.width - 40;
@@ -123,6 +145,11 @@
                 handleYesClick();
             }
         });
+
+        // Reveal girlfriend caption permanently on hover or click
+        const gfWrapper = document.querySelector('.gf-wrapper');
+        gfWrapper.addEventListener('mouseenter', () => gfWrapper.classList.add('revealed'));
+        gfWrapper.addEventListener('click', () => gfWrapper.classList.add('revealed'));
 
         // Focus management
         yesBtn.focus();
